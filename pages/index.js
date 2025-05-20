@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 export default function ChatApp() {
@@ -33,8 +32,10 @@ export default function ChatApp() {
       <h1 className="text-2xl font-bold mb-4">🔮 Team ChatGPT</h1>
       <div className="border rounded p-4 h-96 overflow-y-scroll bg-gray-50">
         {messages.map((msg, i) => (
-          <div key={i} className={\`mb-2 \${msg.role === 'user' ? 'text-right' : 'text-left'}\`}>
-            <span className={\`inline-block px-3 py-2 rounded \${msg.role === 'user' ? 'bg-blue-100' : 'bg-green-100'}\`}>{msg.content}</span>
+          <div key={i} className={`mb-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
+            <span className={`inline-block px-3 py-2 rounded ${msg.role === 'user' ? 'bg-blue-100' : 'bg-green-100'}`}>
+              {msg.content}
+            </span>
           </div>
         ))}
         {loading && <div className="text-gray-400">Assistant is typing...</div>}
